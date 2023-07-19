@@ -41,9 +41,10 @@ meso_width = 500  # Adjust this value to set the width of the big mesosphere
 meso_height = 300  # Adjust this value to set the height of the big mesosphere
 number_balloons_per_row = 3
 num_rows = 2
-big_meso = Meso(meso_height, 'Left', number_balloons_per_row, num_rows)
+big_meso = Meso(meso_height, 'Left', number_balloons_per_row)
 for _ in range(2):
-    big_meso.add_balloons('Right', number_of_balloons, meso_height, num_rows)
+    big_meso.add_balloons('Right', number_of_balloons, meso_height)
+
 #game loop
  # Create an instance of the Bird class
 
@@ -83,6 +84,8 @@ while True:
                 moving_down = True
             elif event.key == pygame.K_d:
                 moving_right = True
+            elif event.key == pygame.K_q:  # Add this here
+                pygame.quit()
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_w:
                 moving_up = False
@@ -92,6 +95,7 @@ while True:
                 moving_down = False
             elif event.key == pygame.K_d:
                 moving_right = False
+
 
     for event in pygame.event.get():
         if event.key == pygame.K_q:
@@ -114,3 +118,4 @@ while True:
         bird.reset_position()
 
 pygame.quit()
+sys.exit()

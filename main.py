@@ -41,10 +41,11 @@ number_of_balloons = 3
 meso_width = 500  # Adjust this value to set the width of the big mesosphere
 meso_height = 300  # Adjust this value to set the height of the big mesosphere
 number_balloons_per_row = 3
-num_rows = 2
-big_meso = Meso(meso_height, 'Left', number_balloons_per_row)
-for _ in range(2):
-    big_meso.add_balloons('Right', number_of_balloons, meso_height)
+num_rows = 3
+
+big_meso = Meso(meso_height, 'Right', number_balloons_per_row, num_rows)
+for _ in range(number_of_balloons):
+    big_meso.add_balloons('Left', number_of_balloons, meso_height, num_rows)
 
 #game loop
  # Create an instance of the Bird class

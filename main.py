@@ -36,6 +36,7 @@ rocket = Rocket(Rocket.starting_pos, 'Left')
 
 #add the mesosphere BABYYYYY
 mesos = []
+
 number_of_balloons = 3
 meso_width = 500  # Adjust this value to set the width of the big mesosphere
 meso_height = 300  # Adjust this value to set the height of the big mesosphere

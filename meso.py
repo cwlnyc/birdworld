@@ -12,6 +12,7 @@ class Meso:
         self.balloons = []
         self.add_balloons(direction, number_of_balloons, meso_height)
 
+
     def add_balloons(self, direction: str, number_of_balloons: int, meso_height: int):
         dp = []
         for _ in range(number_of_balloons):

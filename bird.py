@@ -4,17 +4,28 @@ from airplane import Airplane
 class Bird(pygame.sprite.Sprite):
     starting_position = (300, 490)
     size = (20, 10)
-    image = pygame.image.load('resources/bird.gif')
+    image = [pygame.image.load('./resources/tile000.png'), pygame.image.load('./resources/tile001.png')]
 
     move_dist = 10
     screen_dim = 600, 500
 
+
     def __init__(self):
         super().__init__()
-        self.image = Bird.image
+        self.frames = Bird.image
+        self.current_frame = 0
+        self.image = self.frames[self.current_frame]
         self.rect = pygame.Rect((0, 0), Bird.size)
         self.rect.center = Bird.starting_position
         self.lives = 1
+        self.frame_counter = 0
+
+    def update(self):
+        self.frame_counter += 1
+        if self.frame_counter >= 10:  # Update every 10th frame
+            self.frame_counter = 0
+            self.current_frame = (self.current_frame + 1) % len(self.frames)  # Cycle through the frames
+            self.image = self.frames[self.current_frame]  # Update the image
 
     def move_up(self):
         if self.rect.top >= 20:

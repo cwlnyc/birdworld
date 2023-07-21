@@ -69,6 +69,7 @@ while True:
 
     airplane.move()  # Move the airplane
     rocket.move()  # Move the rocket
+    bird.update()
 
     pygame.display.flip()
 
